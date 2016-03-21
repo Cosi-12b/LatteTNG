@@ -23,5 +23,4 @@ public class LatteTNGExample {
     
     System.out.println(u.transcriptAll());
   }
-
 }
