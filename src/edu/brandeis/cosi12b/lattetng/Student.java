@@ -11,11 +11,11 @@ class Student {
     registrations = new ArrayList<Registration>();
   }
   
-  public String transcript() {
+  public StringBuilder transcript() {
    StringBuilder result = new StringBuilder();
    appendNameInfo(result);
    appendCourseInfo(result);
-   return result.toString();
+   return result;
   }
   
   private void appendNameInfo(StringBuilder sb) {
@@ -27,7 +27,7 @@ class Student {
   private void appendCourseInfo(StringBuilder sb) {
     sb.append("Courses\n");
     for (Registration r: registrations) {
-      sb.append(String.format("%10s  %5s %10s %2s",
+      sb.append(String.format("%10s  %5s %10s %2s%n",
                 r.getCourseName(), r.getDepartmentName(),
                 r.getTeacherName(), r.getGrade()));
     }
