@@ -12,8 +12,8 @@ class Student {
     this.name = name;
   }
   
-  public void isRegistered(Course c) {
-    courses.add(c);
+  public void register(Course course) {
+    courses.add(course);
   }
   
   public String transcript() {
