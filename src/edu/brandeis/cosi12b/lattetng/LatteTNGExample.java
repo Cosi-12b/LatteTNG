@@ -15,8 +15,8 @@ public class LatteTNGExample {
     u.addCourse(c2);
     
    
-    s1.register(new Registration( c1, 2016, "F"));
-    s2.register(new Registration(c2, 2016, "S"));
+    s1.register(c1, 2016, "F");
+    s2.register(c2, 2016, "S");
     
     s1.grade(c1, "A");
     s2.grade(c2, "B");

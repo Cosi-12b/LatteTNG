@@ -35,8 +35,9 @@ class Student {
     }
   }
 
-  public void register(Registration r) {
-    registrations.add(r);
+  public void register(Course course, int year, String semester) {
+    Registration reg = new Registration(course, year, semester);
+    registrations.add(reg);
   }
   
   public boolean grade(Course course, String grade) {
