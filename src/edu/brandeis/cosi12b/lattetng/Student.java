@@ -1,15 +1,19 @@
 package edu.brandeis.cosi12b.lattetng;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 class Student {
   private String name;
   List<Course> courses;
   
-  public Student() {
+  public Student(String name) {
     courses = new ArrayList<Course>();
+    this.name = name;
+  }
+  
+  public void isRegistered(Course c) {
+    courses.add(c);
   }
   
   public String transcript() {
@@ -20,9 +24,14 @@ class Student {
   }
   
   private void appendNameInfo(StringBuilder sb) {
-    sb.append(name);
+    sb.append("\n= = = = = = = = = = = = = = = = \n");
+    sb.append("Transcript for student: " + name);
+    sb.append("\n= = = = = = = = = = = = = = = = \n");
   }
   
   private void appendCourseInfo(StringBuilder sb) { 
+    for (Course c: courses) {
+      sb.append(c.getName()+"  "+ c.getDepartmentName() + " " + c.getTeacherName());
+    }
   }
 }
