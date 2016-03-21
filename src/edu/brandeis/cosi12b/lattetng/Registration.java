@@ -12,6 +12,9 @@ public class Registration {
     this.semester = semester;
   }
   
+  public void setGrade(String grade) {
+    this.grade = grade;
+  }
   public String getCourseName() { return course.getName(); }
   public String getDepartmentName() { return course.getDepartmentName(); }
   public String getTeacherName() { return course.getTeacherName(); }
@@ -21,9 +24,4 @@ public class Registration {
   public int getYear() { return year; }
   public String getSemester() { return semester; }
   
-  public void setGrade(String grade) {
-    this.grade = grade;
-  }
-
-
 }
