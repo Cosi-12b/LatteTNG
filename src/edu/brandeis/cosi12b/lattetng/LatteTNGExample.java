@@ -6,8 +6,8 @@ public class LatteTNGExample {
     
     Course c1 = new Course("Cosi12b", "Salas", "Cosi");
     Course c2 = new Course("Cosi11a", "Hickey", "Cosi");
-    Student s1 = new Student("Marcus");
-    Student s2 = new Student("Jacobs");
+    Student s1 = new Student("Marcus", "Cosi");
+    Student s2 = new Student("Jacobs", "Cosi");
 
     u.addStudent(s1);
     u.addStudent(s2);

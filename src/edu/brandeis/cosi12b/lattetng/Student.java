@@ -4,10 +4,12 @@ import java.util.List;
 
 class Student {
   private String name;
-  List<Registration> registrations;
+  private String major;
+  private List<Registration> registrations;
   
-  public Student(String name) {
-    this.name = name;
+  public Student(String name, String major) {
+    setName(name);
+    setMajor(major);
     registrations = new ArrayList<Registration>();
   }
   
@@ -19,9 +21,9 @@ class Student {
   }
   
   private void appendNameInfo(StringBuilder sb) {
-    sb.append("\n= = = = = = = = = = = = = = = = = \n");
-    sb.append("TRANSCRIPT FOR STUDENT: " + name +"\n");
-    sb.append("= = = = = = = = = = = = = = = = = \n");
+    sb.append("\n= = = = = = = = = = = = = = = = = = = = \n");
+    sb.append("TRANSCRIPT FOR STUDENT: " + getName() +" ["+getMajor()+"]\n");
+    sb.append("= = = = = = = = = = = = = = = = = = = = = \n");
   }
   
   private void appendCourseInfo(StringBuilder sb) {
@@ -46,4 +48,10 @@ class Student {
     }
     return false;
   }
+  
+  public String getMajor() { return major; }
+  public void setMajor(String major) {  this.major = major; }
+  public String getName() { return name; }
+  public void setName(String name) {  this.name = name; }
+  
 }
