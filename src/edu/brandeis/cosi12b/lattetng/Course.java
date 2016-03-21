@@ -13,6 +13,6 @@ public class Course {
   
   public String getName() { return name; }
   public String getTeacherName() { return teacherName; }
-  public String departmentName() { return departmentName; }
+  public String getDepartmentName() { return departmentName; }
 
 }
