@@ -7,12 +7,14 @@ public class University {
   private String name;
   private List<Student>students;
   private List<Course>courses;
+  private List<Registration>registrations;
 
   
   public University(String name) {
     this.name = name;
     students = new ArrayList<Student>();
     courses = new ArrayList<Course>();
+    registrations = new ArrayList<Registration>();
   }
   
   public void addStudent(Student s) {
@@ -22,6 +24,12 @@ public class University {
   public void addCourse(Course c) {
     courses.add(c);
   }
+  
+  public void register(Student student, Course course, int year, String semester) {
+    Registration reg = new Registration(course, student, year, semester);
+    student.register(reg);
+    registrations.add(reg);
+  }
 
   public String getName() { return name; }
 
@@ -30,7 +38,6 @@ public class University {
     for (Student s: students) {
       sb.append(s.transcript());
     }
-    // TODO Auto-generated method stub
     return sb;
   }
 }

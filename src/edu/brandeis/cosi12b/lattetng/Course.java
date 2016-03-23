@@ -12,7 +12,7 @@ public class Course {
   }
   
   public String getName() { return name; }
-  public String getTeacherName() { return teacherName; }
+  public String getTeacherName() { return "Prof. " + teacherName; }
   public String getDepartmentName() { return departmentName; }
 
 }

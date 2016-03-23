@@ -8,9 +8,9 @@ class Student {
   private List<Registration> registrations;
   
   public Student(String name, String major) {
+    registrations = new ArrayList<Registration>();
     setName(name);
     setMajor(major);
-    registrations = new ArrayList<Registration>();
   }
   
   public StringBuilder transcript() {
@@ -18,6 +18,10 @@ class Student {
    appendNameInfo(result);
    appendCourseInfo(result);
    return result;
+  }
+  
+  public void register(Registration course_reg) {
+    registrations.add(course_reg);
   }
   
   private void appendNameInfo(StringBuilder sb) {
@@ -29,17 +33,12 @@ class Student {
   private void appendCourseInfo(StringBuilder sb) {
     sb.append("Courses\n");
     for (Registration r: registrations) {
-      sb.append(String.format("%10s  %5s %10s %2s%n",
+      sb.append(String.format("%25s  %5s %15s %4s%n",
                 r.getCourseName(), r.getDepartmentName(),
                 r.getTeacherName(), r.getGrade()));
     }
   }
 
-  public void register(Course course, int year, String semester) {
-    Registration reg = new Registration(course, year, semester);
-    registrations.add(reg);
-  }
-  
   public boolean grade(Course course, String grade) {
     for (Registration r: registrations) {
       if (r.getCourse() == course) {
