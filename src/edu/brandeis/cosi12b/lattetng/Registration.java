@@ -12,6 +12,7 @@ public class Registration {
     this.student = student;
     this.year = year;
     this.semester = semester;
+    grade = "N/A";
   }
   
   public void setGrade(String grade) {
