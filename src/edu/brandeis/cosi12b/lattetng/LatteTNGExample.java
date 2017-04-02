@@ -5,6 +5,7 @@ import com.github.javafaker.Faker;
 
 public class LatteTNGExample {
   public static void main(String[] args) {
+<<<<<<< HEAD
     Command cmd = new Command();
     System.out.println("Welcome to LatteTNG");
     readDatabase();
@@ -43,6 +44,13 @@ public class LatteTNGExample {
     s2.grade(c2, "B");
     
     System.out.println(u.transcriptAll());
+=======
+    Course c1 = new Course("Cosi12b", "Salas", "Cosi");
+    Student s1 = new Student("Jacobs");
+    s1.register(c1);
+    
+    System.out.println(s1.transcript());
+>>>>>>> master
   }
   
   public static void funExample() {

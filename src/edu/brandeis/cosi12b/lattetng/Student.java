@@ -1,4 +1,8 @@
 package edu.brandeis.cosi12b.lattetng;
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +11,20 @@ class Student {
   private String major;
   private List<Registration> registrations;
   
+<<<<<<< HEAD
   public Student(String name, String major) {
     registrations = new ArrayList<Registration>();
     setName(name);
     setMajor(major);
+=======
+  public Student(String name) {
+    courses = new ArrayList<Course>();
+    this.name = name;
+  }
+  
+  public void register(Course course) {
+    courses.add(course);
+>>>>>>> master
   }
   
   public StringBuilder transcript() {
@@ -25,6 +39,7 @@ class Student {
   }
   
   private void appendNameInfo(StringBuilder sb) {
+<<<<<<< HEAD
     sb.append("\n= = = = = = = = = = = = = = = = = = = = \n");
     sb.append("TRANSCRIPT FOR STUDENT: " + getName() +" ["+getMajor()+"]\n");
     sb.append("= = = = = = = = = = = = = = = = = = = = = \n");
@@ -47,6 +62,17 @@ class Student {
       }
     }
     return false;
+=======
+    sb.append("\n= = = = = = = = = = = = = = = = \n");
+    sb.append("Transcript for student: " + name);
+    sb.append("\n= = = = = = = = = = = = = = = = \n");
+  }
+  
+  private void appendCourseInfo(StringBuilder sb) { 
+    for (Course c: courses) {
+      sb.append(c.getName()+"  "+ c.getDepartmentName() + " " + c.getTeacherName());
+    }
+>>>>>>> master
   }
   
   public String getMajor() { return major; }

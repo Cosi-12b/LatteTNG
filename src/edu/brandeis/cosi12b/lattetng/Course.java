@@ -12,7 +12,11 @@ public class Course {
   }
   
   public String getName() { return name; }
+<<<<<<< HEAD
   public String getTeacherName() { return "Prof. " + teacherName; }
+=======
+  public String getTeacherName() { return teacherName; }
+>>>>>>> master
   public String getDepartmentName() { return departmentName; }
 
 }
