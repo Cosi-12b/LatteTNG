@@ -1,11 +1,26 @@
 package edu.brandeis.cosi12b.lattetng;
+
 import com.github.javafaker.Faker;
 
 
 public class LatteTNGExample {
   public static void main(String[] args) {
-    //simpleExample();
-    funExample();
+    Command cmd = new Command();
+    System.out.println("Welcome to LatteTNG");
+    readDatabase();
+    while (cmd.more()) {
+      cmd.execute();
+    }
+    writeDatabase();
+    System.out.println("Exiting...");
+  }
+ 
+  public static void readDatabase() {
+    System.out.println("... Pretend to read database");
+  }
+  
+  public static void writeDatabase() {
+    System.out.println("... Pretend to write database");
   }
   
   public static void simpleExample() {
@@ -41,7 +56,7 @@ public class LatteTNGExample {
     u.addCourse(c3);
     
     Faker faker = new Faker();
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<15; i++) {
       Student stud1 = new Student(faker.name().firstName() + " " + faker.name().lastName(), "GENL");
       u.addStudent(stud1);
       u.register(stud1,  c1,  2016,  "FALL");
@@ -51,4 +66,15 @@ public class LatteTNGExample {
     
     System.out.println(u.transcriptAll());
   }
+}
+
+class Command {
+  boolean more() {
+    System.out.println("... Pretend to read a command line");
+    return false;
+  }
+  void execute() {
+    System.out.println("... Pretend to execute a command");
+  }
+ 
 }
